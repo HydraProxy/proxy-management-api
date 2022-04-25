@@ -32,12 +32,12 @@ All API calls must include the following two headers.
 'Authorization: Token extended_api_token_string'
 ```
 
-1. [GET **get_account_info**](#get_account_info)
+1. [GET **get_account_info/**](#get_account_info)
 2. [POST **view_usage_history/**](#view_usage_history)
 
 ---
 
-## get_account_info
+## get_account_info/
 
 Returns the details of your reseller account
 
