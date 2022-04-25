@@ -42,7 +42,7 @@ All API calls must include the following two headers.
 
 Returns the details of your reseller account
 
-**GET** ```https://api.hydraproxy.com/get_account_info```
+**GET** ```https://app.hydraproxy.com/api/get_account_info/```
 
 *Headers*
 ```
@@ -64,13 +64,11 @@ Returns the details of your reseller account
 
 ## view_usage_history/
 
-For residential proxies only. Retrieve the historical bandwidth usage in MB per day with a 1 to 2% tolerance.
-
 **NOTE 1**: For current day usage history there is a delay in displaying the exact usage. Final usage for the day can be retrived at the end of day (UTC time).
 
-**NOTE 2**: The History usage won’t be available for all the data set. An order's old history gets deleted to avoid large API responses, so you'll probably need to save it in the database.
+**NOTE 2**: The History usage won’t be available for all the data set. An order's old history gets deleted to avoid large API responses, so you'll probably need to save it in the database. If you have opted for the extended usage log, you will be able to retrieve all your order's usage since extended usage activation.
 
-**POST** ```https://api.hydraproxy.com/view_usage_history/```
+**POST** ```https://app.hydraproxy.com/api/view_usage_history/```
 
 *Headers*
 ```
@@ -81,13 +79,13 @@ For residential proxies only. Retrieve the historical bandwidth usage in MB per 
 
 | Key (low caps)  | Value Type (CAPS or digits)   | Options     | Description  |
 | -------         | -------           | ---------------------   | -----------  |
-| order_id        | digits            | 1 to XX | Insert the ID of the order for which you want to retrieve the details. |
+| order_id        | digits            | 1 to XX | Insert the order ID as string. |
 
 **Response for unused bandwidth**
 ```
 {
     "status": "OK",
-    "order_id": 22,
+    "order_id": 43440,
     "usage": null
 }
 ```
@@ -119,6 +117,3 @@ For residential proxies only. Retrieve the historical bandwidth usage in MB per 
     ]
 }
 ```
-
-
-
