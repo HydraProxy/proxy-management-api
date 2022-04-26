@@ -78,7 +78,7 @@ Returns the details of your reseller account
 
 | Key (low caps)  | Value Type (CAPS or digits)   | Options     | Description  |
 | -------         | -------           | ---------------------   | -----------  |
-| order_id        | digits            | 1 to XX | Insert the order ID as string. |
+| order_id        | 123XX             | 1 to XXXX | Insert the order ID *as string*. |
 
 **Response for unused bandwidth**
 ```
