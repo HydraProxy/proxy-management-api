@@ -34,8 +34,8 @@ Accept: application/json
 Authorization: Token extended_api_token_string
 ```
 
-1. [GET **api/get-account-info/**](#api/get-account-info/)
-2. [POST **api/view-usage-history/**](#api/view-usage-history/)
+1. [GET **api/get-account-info/**](#api/get-account-info)
+2. [POST **api/view-usage-history/**](#api/view-usage-history)
 
 ---
 
