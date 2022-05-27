@@ -34,12 +34,12 @@ Accept: application/json
 Authorization: Token extended_api_token_string
 ```
 
-1. [GET **api/get-account-info/**](#api/get-account-info)
-2. [POST **api/view-usage-history/**](#api/view-usage-history)
+1. [GET **api/get-account-info/**](#get-account-info)
+2. [POST **api/view-usage-history/**](#view-usage-history)
 
 ---
 
-## api/get-account-info
+## get-account-info
 
 Returns the details of your HydraProxy.com account
 
@@ -63,7 +63,7 @@ Authorization: Token extended_api_token_string
 ```
 
 
-## api/view-usage-history
+## view-usage-history
 
 **NOTE 1**: For current day usage history there is a delay in displaying the exact usage. Final usage for the day can be retrived at the end of day (UTC time).
 
