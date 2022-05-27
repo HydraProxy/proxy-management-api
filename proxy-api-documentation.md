@@ -37,7 +37,7 @@ Authorization: Token extended_api_token_string
 ## Endpoints
 
 1. [GET **api/get-account-info/**](#get-account-info)
-2. [POST **api/view-usage-history/**](#proxy-details)
+2. [POST **api/proxy-details/**](#proxy-details)
 3. [POST **api/update-whitelist-ip/**](#update-whitelist-ip)
 4. [POST **api/update-location/**](#update-location)
 5. [POST **api/update-rotation/**](#update-rotation)
@@ -70,6 +70,8 @@ Authorization: Token extended_api_token_string
 ```
 
 ## proxy-details
+
+Returns the details of a proxy order.
 
 **NOTE 1**: Order ID must be specified (as a string, not integers).
 
@@ -226,6 +228,8 @@ All proxy orders will return the following data common to all your orders:
 
 ## update-whitelist-ip
 
+Use this endpoint to update the whitelisted IP of your mobile or static order.
+
 **NOTE 1**: Order ID must be specified (as a string, not integers).
 
 **POST** ```https://app.hydraproxy.com/api/update-whitelist-ip/```
@@ -282,6 +286,8 @@ All responses will return both ```status``` and ```update_status```.
 ```
 
 ## update-location
+
+Use this endpoint to update the US state of your 4G, Wi-Fi or 4G & Wi-Fi proxy order.
 
 **NOTE 1**: Order ID must be specified (as a string, not integers).
 
@@ -357,6 +363,8 @@ All responses will return both ```status``` and ```update_status```.
 ```
 
 ## update-rotation
+
+Use this endpoint to change between the rotation types of a mobile proxy order.
 
 **NOTE 1**: Order ID must be specified (as a string, not integers).
 
@@ -455,6 +463,8 @@ Authorization: Token extended_api_token_string
 ```
 
 ## view-usage-history
+
+Returns the usage history (bandwidth used) of a residential proxy order.
 
 **NOTE 1**: For current day usage history there is a delay in displaying the exact usage. Final usage for the day can be retrived at the end of day (UTC time).
 
