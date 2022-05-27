@@ -39,7 +39,7 @@ Authorization: Token extended_api_token_string
 
 ---
 
-## api/get-account-info/
+## api/get-account-info
 
 Returns the details of your HydraProxy.com account
 
@@ -63,7 +63,7 @@ Authorization: Token extended_api_token_string
 ```
 
 
-## api/view-usage-history/
+## api/view-usage-history
 
 **NOTE 1**: For current day usage history there is a delay in displaying the exact usage. Final usage for the day can be retrived at the end of day (UTC time).
 
