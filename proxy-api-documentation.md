@@ -3,7 +3,7 @@
 ### API General Usage Info
 
 - **All POST data digit parameters must be sent as **strings of digits** (NOT integers).**
-- **Only order management is allowed via the API (updating whitelisted IPs, changing location, etc). Order placement (buy or extending a proxy order) must be performed manually from your account dashboard at: [app.hydraproxy.com](app.hydraproxy.com)app.hydraproxy.com**
+- **Only order management is allowed via the API (updating whitelisted IPs, changing location, etc). Order placement (buy or extending a proxy order) must be performed manually from your account dashboard at: [app.hydraproxy.com](app.hydraproxy.com)**
 - All requests must be sent via HTTPS
 - API Key must be included in the **Authorization** header with the format `Token api_token_string`
 - **GET** or **POST** method must be specified. URLs for **POST** methods must end with a forward slash **/**
