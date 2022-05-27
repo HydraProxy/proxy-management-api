@@ -2,21 +2,23 @@
 
 ### API General Usage Info
 
-- **All POST digit parameters must be sent as **strings of digits** (NOT integers).**
+- **All POST data digit parameters must be sent as **strings of digits** (NOT integers).**
+- **Only order management is allowed via the API (updating whitelisted IPs, changing location, etc). Order placement (buy or extending a proxy order) must be performed manually from your account dashboard at: [app.hydraproxy.com](app.hydraproxy.com)app.hydraproxy.com**
 - All requests must be sent via HTTPS
-- API Key is included in the **Authorization** header with the format `Token api_token_string`
+- API Key must be included in the **Authorization** header with the format `Token api_token_string`
 - **GET** or **POST** method must be specified. URLs for **POST** methods must end with a forward slash **/**
-- The API recognizes requests sent only from whitelisted IP addresses (you can provide a maximum of three IP addresses from where the API will be called).
-- Whitelisting an IP address is done manually. You can request a change at any time.
-- All dates/hours/ timestamps are in UTC time.
-- API responses are in json format.
-- The first item of the response is the request status ("OK" or "ERROR").
+- The API recognizes requests sent only from whitelisted IP addresses (you can provide a maximum of three IP addresses from where the API will be called)
+- You can update the whitelisted IPs at anytime in the future (provided a 30 minutes change lockdown after the last update)
+- Whitelisting an IP address is done manually. You can request a change at any time
+- All dates/hours/ timestamps are in UTC time
+- API responses are in json format
+- The first item of the response is the request status ("OK" or "ERROR")
 
 **ERROR Response Example**
 
 ```
 {  "status":"ERROR",
-    "url" : "order_details/",
+    "url": "api/proxy_details/",
     "message":"unauthorised_request"
 }
 ```
@@ -28,25 +30,25 @@
 All API calls must include the following two headers.
 
 ```
-'Accept: application/json'
-'Authorization: Token extended_api_token_string'
+Accept: application/json
+Authorization: Token extended_api_token_string
 ```
 
-1. [GET **get_account_info/**](#get_account_info)
-2. [POST **view_usage_history/**](#view_usage_history)
+1. [GET **api/get-account-info/**](#api/get-account-info/)
+2. [POST **api/view-usage-history/**](#api/view-usage-history/)
 
 ---
 
-## get_account_info/
+## api/get-account-info/
 
-Returns the details of your reseller account
+Returns the details of your HydraProxy.com account
 
-**GET** ```https://app.hydraproxy.com/api/get_account_info/```
+**GET** ```https://app.hydraproxy.com/api/get-account-info/```
 
 *Headers*
 ```
-'Accept: application/json'
-'Authorization: Token extended_api_token_string'
+Accept: application/json
+Authorization: Token extended_api_token_string
 ```
 
 **Response**
@@ -61,7 +63,7 @@ Returns the details of your reseller account
 ```
 
 
-## view_usage_history/
+## api/view-usage-history/
 
 **NOTE 1**: For current day usage history there is a delay in displaying the exact usage. Final usage for the day can be retrived at the end of day (UTC time).
 
@@ -71,8 +73,8 @@ Returns the details of your reseller account
 
 *Headers*
 ```
-'Accept: application/json'
-'Authorization: Token extended_api_token_string'
+Accept: application/json
+Authorization: Token extended_api_token_string
 ```
 *Accepted key:value Data*
 
