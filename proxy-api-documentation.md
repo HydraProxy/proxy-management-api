@@ -42,7 +42,8 @@ Authorization: Token extended_api_token_string
 4. [POST **api/update-location/**](#update-location)
 5. [POST **api/update-rotation/**](#update-rotation)
 6. [GET **api/get-locations-list/**](#get-locations-list)
-7. [POST **api/view-usage-history/**](#view-usage-history)
+7. [POST **api/locations-carrier-list/**](#locations-carrier-list)
+8. [POST **api/view-usage-history/**](#view-usage-history)
  
 ---
 
@@ -462,6 +463,52 @@ Authorization: Token extended_api_token_string
     ]
 }
 
+```
+
+## locations-carrier-list
+
+Returns all US states available connections for a dedicated carrier.
+
+For dedicated carrier orders. Use this endpoint to get the available US states where you can change your proxy location.
+
+**NOTE 2**: Available only for mobile proxies
+
+**POST** ```https://app.hydraproxy.com/api/locations-carrier-list/```
+
+*Headers*
+```
+Accept: application/json
+Authorization: Token extended_api_token_string
+```
+
+*Accepted key:value Data*
+
+| Key (low caps)  | Value Type (low cap)   | Options     | Description  |
+| -------         | -------           | ---------------------   | -----------  |
+| carrier         | att          | att, verizon, tmobile, comcast, spectrum, centurylink, cox  | Carrier name in low cap characters. |
+
+**Response**
+
+```
+{
+    "status": "OK",
+    "url": "api/locations-carrier-list/",
+    "carrier": "comcast",
+    "all_carrier_geo": [
+        {
+            "state_name": "Arizona",
+            "stane_code": "AZ"
+        },
+        {
+            "state_name": "California",
+            "stane_code": "CA"
+        },
+        {
+            "state_name": "Wisconsin",
+            "stane_code": "WI"
+        }
+    ]
+}
 ```
 
 ## view-usage-history
