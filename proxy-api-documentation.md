@@ -383,7 +383,7 @@ Authorization: Token extended_api_token_string
 | Key (low caps)  | Value Type   | Options     | Description  |
 | -------         | -------           | ---------------------   | -----------  |
 | order_id        | 29139             | 1 to XXXX | Insert the order ID value *as string*. |
-| rotation_auto        | true          | true, false | use true of force 30min rotation and false for extended rotation. |
+| rotation_auto        | true          | 5, 10, 30, true, false | use true of force 30min rotation and false for extended rotation. |
 
 All responses will return both ```status``` and ```update_status```. 
 ```status``` - for all requests that reached the API server. 
@@ -399,12 +399,13 @@ All responses will return both ```status``` and ```update_status```.
     "update_info": {
         "update_status": "OK",
         "rotation_auto": false,
+        "rotation_type": "30",
         "next_ip_rotation": ""
     }
 }
 ```
 
-**Response for ```true``` (30min auto rotation)**
+**Response for ```true``` (default 30min auto rotation), 5 minutes, 10 minutes or 30 minutes**
 
 ```
 {
@@ -414,6 +415,7 @@ All responses will return both ```status``` and ```update_status```.
     "update_info": {
         "update_status": "OK",
         "rotation_auto": true,
+        "rotation_type": "10",
         "next_ip_rotation": "2022-05-27 08:22:48"
     }
 }
