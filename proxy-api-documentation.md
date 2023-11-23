@@ -493,19 +493,19 @@ Authorization: Token extended_api_token_string
 {
     "status": "OK",
     "url": "api/locations-carrier-list/",
-    "carrier": "comcast",
+    "carrier": "att",
     "all_carrier_geo": [
         {
             "state_name": "Arizona",
-            "stane_code": "AZ"
+            "state_code": "AZ"
         },
         {
             "state_name": "California",
-            "stane_code": "CA"
+            "state_code": "CA"
         },
         {
             "state_name": "Wisconsin",
-            "stane_code": "WI"
+            "state_code": "WI"
         }
     ]
 }
