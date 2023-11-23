@@ -471,7 +471,7 @@ Returns all US states available connections for a dedicated carrier.
 
 For dedicated carrier orders. Use this endpoint to get the available US states where you can change your proxy location.
 
-**NOTE 2**: Available only for mobile proxies
+**NOTE**: Available only for mobile proxies
 
 **POST** ```https://app.hydraproxy.com/api/locations-carrier-list/```
 
