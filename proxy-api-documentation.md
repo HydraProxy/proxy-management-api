@@ -41,9 +41,10 @@ Authorization: Token extended_api_token_string
 3. [POST **api/update-whitelist-ip/**](#update-whitelist-ip)
 4. [POST **api/update-location/**](#update-location)
 5. [POST **api/update-rotation/**](#update-rotation)
-6. [GET **api/get-locations-list/**](#get-locations-list)
-7. [POST **api/locations-carrier-list/**](#locations-carrier-list)
-8. [POST **api/view-usage-history/**](#view-usage-history)
+6. [POST **api/force-rotation/**](#force-rotation)
+7. [GET **api/get-locations-list/**](#get-locations-list)
+8. [POST **api/locations-carrier-list/**](#locations-carrier-list)
+9. [POST **api/view-usage-history/**](#view-usage-history)
  
 ---
 
@@ -389,7 +390,7 @@ Authorization: Token extended_api_token_string
 
 All responses will return both ```status``` and ```update_status```. 
 ```status``` - for all requests that reached the API server. 
-```update_status``` - informs you if the update/change has been succesfully applied.
+```update_status``` - informs you if the update/change has been successfully applied.
 
 **Response for ```false``` extended rotation**
 
@@ -419,6 +420,65 @@ All responses will return both ```status``` and ```update_status```.
         "rotation_auto": true,
         "rotation_type": "10",
         "next_ip_rotation": "2022-05-27 08:22:48"
+    }
+}
+
+```
+
+## force-rotation
+
+Use this endpoint to force-rotate a port's IP before the regular rotation time.
+
+**NOTE 1**: Endpoint available on request (only for premium customers).
+
+**NOTE 2**: Order ID and PORT ID must be specified (as a string, not integers).
+
+**NOTE 3**: After a force IP rotation, your order will go into a 30min lockdown, during which you can't do another force IP rotation.
+
+**POST** ```https://app.hydraproxy.com/api/force-rotation/```
+
+*Headers*
+```
+Accept: application/json
+Authorization: Token extended_api_token_string
+```
+
+*Accepted key:value Data*
+
+| Key (low caps)  | Value Type   | Options     | Description  |
+| -------         | -------           | ---------------------   | -----------  |
+| order_id        | 29139             | 1 to XXXX | Insert the order ID value *as string*. |
+| port_id         | 3019          | 1 to XXXX | Insert the port number value *as string*. |
+
+All responses will return both ```status``` and ```update_status```. 
+```status``` - for all requests that reached the API server. 
+```update_status``` - informs you if the update/change has been successfully applied.
+
+**Response for successful force rotation**
+
+```
+{
+    "status": "OK",
+    "url": "api/force-rotation/",
+    "order_id": 29139,
+    "update_info": {
+        "update_status": "OK",
+        "force_rotation_unlock_time": "2022-05-27 08:22:48",
+        'message': 'Port IP rotated - it can take up to 2 minutes for the IP to rotate.'
+    }
+}
+```
+
+**Response for various errors.**
+
+```
+{
+    "status": "OK",
+    "url": "api/force-rotation/",
+    "order_id": 29139,
+    "update_info": {
+        "update_status": "ERROR",
+        "message": "Verbose message regarding the error your are facing.",
     }
 }
 
